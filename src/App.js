@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Fetch from "./component/fetch";
+import SignUp from "./component/signup";
 // import { google_map_api_key } from "../../model/config";
 
 class App extends Component {
@@ -25,15 +26,14 @@ class App extends Component {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude
     });
-    this.reverseGeocoding();
+    //s  this.reverseGeocoding();
   };
 
   reverseGeocoding = () => {
     const lat = this.state.latitude;
     const lng = this.state.longitude;
-    fetch(
-    //  replace with your api
-    )
+    fetch()
+      //  replace with your api
       .then(response => response.json())
       .then(
         data => console.log(data)
@@ -69,15 +69,12 @@ class App extends Component {
         <button onClick={this.getLocation}>Location</button>
         <p>latitude: {this.state.latitude}</p>
         <p>longitude: {this.state.longitude}</p>
-        {/* <p>userAddress:{this.state.userAddress}</p> */}
-        <p>
-          userAddress:
-          <Fetch />
-        </p>
+        <p>userAddress:{this.state.userAddress}</p>
         {this.state.latitude && this.state.longitude ? (
           <img src={``} alt="" />
         ) : null}
-        {/* https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${config.google_map_api_key} */}
+        <Fetch />
+        <SignUp />
       </div>
     );
   }
