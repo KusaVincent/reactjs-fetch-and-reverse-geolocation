@@ -25,24 +25,24 @@ class App extends Component {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude
     });
-    // this.reverseGeocoding();
+    this.reverseGeocoding();
   };
 
-  // reverseGeocoding = () => {
-  //   const lat = this.state.latitude;
-  //   const lng = this.state.longitude;
-  //   fetch(
-  //     `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${config.google_map_api_key}`
-  //   )
-  //     .then(response => response.json())
-  //     .then(
-  //       data => console.log(data)
-  //       // this.setState({
-  //       //   userAddress: data.results[0].formatted_address
-  //       // })
-  //     )
-  //     .then.catch(error => alert(error));
-  // };
+  reverseGeocoding = () => {
+    const lat = this.state.latitude;
+    const lng = this.state.longitude;
+    fetch(
+    //  replace with your api
+    )
+      .then(response => response.json())
+      .then(
+        data => console.log(data)
+        // this.setState({
+        //   userAddress: data.results[0].formatted_address
+        // })
+      )
+      .then.catch(error => alert(error));
+  };
 
   handleLocationError = error => {
     switch (error.code) {

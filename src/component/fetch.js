@@ -10,7 +10,7 @@ class Fetch extends Component {
   }
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/Users")
+    fetch("https://jsonplaceholder.typicode.com/Users") //dummy data api
       .then(response => response.json())
       .then(json => {
         this.setState({
